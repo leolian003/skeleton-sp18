@@ -25,6 +25,19 @@ public class IntList {
         rest = rest0;
     }
 
+    public int get(int i){
+
+        IntList curr = this;
+        int num = 0;
+        while(num!=i){
+            curr = curr.rest;
+            num+=1;
+        }
+
+        return curr.first;
+    }
+
+
     /**
      * A List with null rest, and first = 0.
      */
@@ -81,8 +94,18 @@ public class IntList {
      */
 
     public static IntList dcatenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        return null;
+
+        if(A==null){
+            return B;
+        }
+
+        IntList curr=A;
+        while(curr.rest!=null){
+            curr = curr.rest;
+        }
+
+        curr.rest = B;
+        return A;
     }
 
     /**
@@ -91,7 +114,19 @@ public class IntList {
      */
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        if(A==null){
+            return B;
+        }
+        IntList out = new IntList(A.first,null);
+        IntList curr = out;
+        while(A.rest!=null){
+            curr.rest = new IntList(A.rest.first,null);
+            A=A.rest;
+            curr=curr.rest;
+        }
+        curr.rest = B;
+
+        return out;
     }
 
 
