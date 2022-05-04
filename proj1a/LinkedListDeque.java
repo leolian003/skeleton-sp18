@@ -5,12 +5,12 @@ public class LinkedListDeque <T> {
     /** An SLList is a list of integers, which hides the terrible truth
      * of the nakedness within. */
 
-        public class IntNode{
+        private class IntNode{
             public T item;
             public IntNode next;
             public IntNode before;
 
-            public IntNode(T i,IntNode n,IntNode b){
+            private IntNode(T i,IntNode n,IntNode b){
                 item = i;
                 next = n;
                 before = b;
@@ -26,13 +26,6 @@ public class LinkedListDeque <T> {
             size=0;
         }
 
-        public LinkedListDeque(T x){
-            sentinel = new IntNode(null,null,null);
-            IntNode newNode = new IntNode(x,sentinel,sentinel);
-            sentinel.next = newNode;
-            sentinel.before = newNode;
-            size=1;
-        }
 
         //Todo implement function
 
@@ -134,10 +127,4 @@ public class LinkedListDeque <T> {
         }
 
 
-        public static void main(String[] args){
-            LinkedListDeque L2 = new LinkedListDeque(5);
-            L2.addFirst(10);
-            L2.addFirst(5);
-
-        }
     }

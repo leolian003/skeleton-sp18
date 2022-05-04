@@ -37,66 +37,28 @@ public class LinkedListDequeTest {
 		System.out.println("Running add/isEmpty/Size test.");
 		//System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
 
-		LinkedListDeque<String> lld1 = new LinkedListDeque<String>();
+		ArrayDeque<String> lld1 = new ArrayDeque<>();
 
 		boolean passed = checkEmpty(true, lld1.isEmpty());
 
-		lld1.addFirst("front");
-		lld1.addFirst("front1");
-		lld1.addFirst("front2");
+
+		lld1.addFirst("back1");
+		lld1.addFirst("back2");
+		lld1.addFirst("back3");
+		lld1.addFirst("back4");
+		lld1.addFirst("back5");
+		lld1.addFirst("back6");
+		lld1.addFirst("back7");
+		lld1.printDeque();
+		lld1.addFirst("back8");
+		System.out.println(lld1.get(0));
+		lld1.printDeque();
 		// The && operator is the same as "and" in Python.
 		// It's a binary operator that returns true if both arguments true, and false otherwise.
 //		passed = checkSize(1, lld1.size()) && passed;
 //		passed = checkEmpty(false, lld1.isEmpty()) && passed;
 
-		lld1.addLast("middle");
-//		passed = checkSize(2, lld1.size()) && passed;
 
-		lld1.addLast("back");
-//		passed = checkSize(3, lld1.size()) && passed;
-//		lld1.removeFirst();
-//1
-		lld1.removeLast();
-		lld1.removeLast();
-		lld1.addLast("back1");
-		lld1.printDeque();
-		lld1.addFirst("back2");
-		lld1.printDeque();
-		lld1.addLast("back4");
-		lld1.printDeque();
-		lld1.addLast("back5");
-		lld1.printDeque();
-		lld1.addFirst("back6");
-		lld1.printDeque();
-		lld1.addLast("back7");
-		lld1.printDeque();
-		lld1.removeFirst();
-		lld1.printDeque();
-//		System.out.println("Printing out deque: ");
-		lld1.addLast("back8");
-		lld1.printDeque();
-		lld1.addLast("back9");
-		lld1.printDeque();
-		lld1.addFirst("back10");
-		lld1.printDeque();
-		lld1.addFirst("back11");
-		lld1.printDeque();
-		lld1.addLast("back12");
-		lld1.printDeque();
-		lld1.addLast("back13");
-		//expected: back11back10back2front2front1frontback1back4back5back7back8back9back12back13
-		lld1.printDeque();
-		passed = checkSize(14, lld1.size()) && passed;
-		lld1.removeFirst();
-		lld1.removeFirst();
-		lld1.removeFirst();
-		lld1.removeFirst();
-		lld1.removeFirst();
-		lld1.removeFirst();
-		lld1.removeFirst();
-		lld1.removeFirst();
-		lld1.removeFirst();
-		lld1.printDeque();
 		printTestStatus(passed);
 
 	}

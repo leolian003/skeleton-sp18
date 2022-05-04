@@ -20,8 +20,8 @@ public class ArrayDeque <T> {
     public void addFirst(T x){
         item[nextFirst]=x;
         size+=1;
-        if (size == item.length) {
-            resize(nextFirst,size*EXPAND_FACTOR);
+        if (size == item.length-1) {
+            resize(nextFirst,(size+1)*EXPAND_FACTOR);
         }
         else{
             nextFirst = stepBackward(nextFirst);
@@ -30,8 +30,8 @@ public class ArrayDeque <T> {
     public void addLast(T x){
         item[nextLast]=x;
         size+=1;
-        if (size == item.length) {
-            resize(nextFirst,size*EXPAND_FACTOR);
+        if (size == item.length-1) {
+            resize(stepForward(nextFirst),(size+1)*EXPAND_FACTOR);
         }
         else {
             nextLast = stepForward(nextLast);
@@ -120,13 +120,4 @@ public class ArrayDeque <T> {
         System.out.println("");
     }
 
-
-
-
-
-
-    public static void main(String[] args){
-
-
-    }
 }
